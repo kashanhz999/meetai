@@ -19,3 +19,18 @@
  -- Pushed the code to Github
 
 ----------------------------------------------------------------------
+
+02 Database
+
+-Add a PostgreSQL database (Neon)
+
+-Add DrizzleORM
+
+-Add Schema
+ --Push Schema
+ --Verify changes in Neon
+ --Verify changes in Drizzle Studio
+
+- Create, review & merge pull request
+
+----------------------------------------------------------------------
