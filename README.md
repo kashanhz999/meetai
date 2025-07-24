@@ -34,3 +34,15 @@
 - Create, review & merge pull request
 
 ----------------------------------------------------------------------
+
+03 Authentication Setup
+
+-Integrate Better-Auth
+
+-Configure Auth Schema
+ --Push Changes
+
+-Create Basic UI
+ --Create new user
+
+-Create, review & merge pull request
