@@ -1,12 +1,14 @@
 "use client";
 //Npm Imports
-import { set, z } from "zod";
+import { z } from "zod";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { OctagonAlertIcon } from "lucide-react";
+import Image from "next/image";
+import {FaGithub, FaGoogle} from "react-icons/fa";
 
 //Local Imports
 import { Input } from "@/components/ui/input";
@@ -23,6 +25,7 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form";
+import { Fa } from "zod/v4/locales";
 
 
 const formSchema = z.object({
@@ -38,9 +41,9 @@ const formSchema = z.object({
 
 export const SignUpView = () => {
 
-    const router = useRouter();
     const [error, setError] = useState<string | null>(null);
     const [pending, setPending] = useState(false);
+    const router = useRouter();
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -60,11 +63,32 @@ export const SignUpView = () => {
                 name: data.name,
                 email: data.email,
                 password: data.password,
+                callbackURL: "/"
             },
             {
                 onSuccess: () => {
                     setPending(false);
                     router.push("/");
+                },
+                onError: ({ error }) => {
+                    setPending(false);
+                    setError(error.message || "An error occurred during sign in.");
+                }
+            }
+        )
+        
+    }
+    const onSocial = (provider: "github" | "google") => {
+        setError(null);
+        setPending(true);
+        authClient.signIn.social(
+            {   
+                provider: provider,
+                callbackURL: "/"
+            },
+            {
+                onSuccess: () => {
+                    setPending(false);
                 },
                 onError: ({ error }) => {
                     setPending(false);
@@ -101,7 +125,6 @@ export const SignUpView = () => {
                                                 <FormControl>
                                                     <Input
                                                         type="text"
-                                                        placeholder="Kashan Haider"
                                                         {...field}
                                                     />
                                                 </FormControl>
@@ -120,7 +143,6 @@ export const SignUpView = () => {
                                                 <FormControl>
                                                     <Input
                                                         type="email"
-                                                        placeholder="k@example.com"
                                                         {...field}
                                                     />
                                                 </FormControl>
@@ -139,7 +161,6 @@ export const SignUpView = () => {
                                                 <FormControl>
                                                     <Input
                                                         type="password"
-                                                        placeholder="***********"
                                                         {...field}
                                                     />
                                                 </FormControl>
@@ -158,7 +179,6 @@ export const SignUpView = () => {
                                                 <FormControl>
                                                     <Input
                                                         type="password"
-                                                        placeholder="***********"
                                                         {...field}
                                                     />
                                                 </FormControl>
@@ -182,11 +202,16 @@ export const SignUpView = () => {
                                     </span>
                                 </div>
                                 <div className="grid grid-cols-2 gap-4">
-                                    <Button disabled={pending} variant="outline" type="button" className="w-full">
-                                        Google
+                                    <Button 
+                                    onClick={()=>{onSocial("google")}}
+
+                                    disabled={pending} variant="outline" type="button" className="w-full">
+                                       <FaGoogle/>
                                     </Button>
-                                    <Button disabled={pending} variant="outline" type="button" className="w-full">
-                                        Github
+                                    <Button onClick={
+                                        ()=>{onSocial("github")}
+                                    } disabled={pending} variant="outline" type="button" className="w-full">
+                                        <FaGithub/>
                                     </Button>
                                 </div>
                                 <div className="text-center text-sm">
@@ -199,7 +224,7 @@ export const SignUpView = () => {
                         </form>
                     </Form>
                     <div className="bg-radial from-green-700 to-green-900 relative hidden md:flex flex-col gap-y-4 items-center justify-center">
-                        <img src="/logo.svg" alt="Logo" className="h-[92px] w-[92px]" />
+                        <Image src="/logo.svg" alt="Logo" width={92} height={92} className="h-[92px] w-[92px]" />
                         <p className="text-2xl font-semibold text-white"> Meet.Ai</p>
                     </div>
                 </CardContent>
