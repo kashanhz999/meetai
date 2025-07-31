@@ -63,3 +63,15 @@
     --Get App Logo
 
 -Create, Review & Merge Pull Request
+
+-----------------------------------------------------------
+
+05 Authentication Socials
+
+ -Configure social providers
+    --Github
+    --Google
+
+ -Protect Non-Auth Pages
+
+ -Create, review & merge pull request
