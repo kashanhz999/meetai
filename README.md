@@ -46,3 +46,20 @@
  --Create new user
 
 -Create, review & merge pull request
+
+---------------------------------------------------------------------
+
+04 Authentication UI
+
+ -Create Auth Pages
+ 
+ -Create Auth Layout
+
+ -Create Auth Module
+
+ -Create Auth View
+    --Register Form
+    --Login Form
+    --Get App Logo
+
+-Create, Review & Merge Pull Request
