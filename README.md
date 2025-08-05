@@ -91,4 +91,15 @@
   -Fix gradient colors in auth views
 
   -create, review & merge pull request
+
+
+  -----------------------------------------------------------------------------
+
+  07 Dashboard Navbar
+
+   -Create Dashboard Navbar
+
+   -Add responsive drawer to Dashboard User Button
+
+   -Create, review & merge pull request
   
