@@ -23,12 +23,12 @@ import { usePathname } from "next/navigation";
 const firstsection = [
   {
     icon: VideoIcon,
-    lable: "Meetings",
+    label: "Meetings",
     href: "/meetings",
   },
   {
     icon: BotIcon,
-    lable: "Agents",
+    label: "Agents",
     href: "/agents",
   },
 ];
@@ -36,7 +36,7 @@ const firstsection = [
 const secondSection = [
   {
     icon: StarIcon,
-    lable: "Upgrade",
+    label: "Upgrade",
     href: "/upgrade",
   },
 ];
@@ -64,16 +64,16 @@ export const DashboardSidebar = () => {
                   <SidebarMenuButton
                     asChild
                     className={cn(
-                      "h-10 hover:bg-linear-to-r/oklch border border-transparent hover:border-[#5D6B68]/10 from-sidebar-accent from-5% via-30% via-sidebar/50 to-sidebar/50",
+                      "h-10 hover:bg-gradient-to-r border border-transparent hover:border-[#5D6B68]/10 hover:from-sidebar-accent hover:from-5% hover:via-sidebar/50 hover:to-sidebar/50",
                       pathname === item.href &&
-                        "bg-linear-to-r/oklch border=[#5D6B68]/10"
+                        "bg-gradient-to-r border-[#5D6B68]/10 from-sidebar-accent from-5% via-sidebar/50 to-sidebar/50"
                     )}
                     isActive={pathname === item.href}
                   >
                     <Link href={item.href}>
                       <item.icon className="size-5 " />
                       <span className="text-sm font-medium tracking-tight">
-                        {item.lable}
+                        {item.label}
                       </span>
                     </Link>
                   </SidebarMenuButton>
@@ -93,16 +93,16 @@ export const DashboardSidebar = () => {
                   <SidebarMenuButton
                     asChild
                     className={cn(
-                      "h-10 hover:bg-linear-to-r/oklch border border-transparent hover:border-[#5D6B68]/10 from-sidebar-accent from-5% via-30% via-sidebar/50 to-sidebar/50",
+                      "h-10 hover:bg-gradient-to-r border border-transparent hover:border-[#5D6B68]/10 hover:from-sidebar-accent hover:from-5% hover:via-sidebar/50 hover:to-sidebar/50",
                       pathname === item.href &&
-                        "bg-linear-to-r/oklch border=[#5D6B68]/10"
+                        "bg-gradient-to-r border-[#5D6B68]/10 from-sidebar-accent from-5% via-sidebar/50 to-sidebar/50"
                     )}
                     isActive={pathname === item.href}
                   >
                     <Link href={item.href}>
                       <item.icon className="size-5 " />
                       <span className="text-sm font-medium tracking-tight">
-                        {item.lable}
+                        {item.label}
                       </span>
                     </Link>
                   </SidebarMenuButton>

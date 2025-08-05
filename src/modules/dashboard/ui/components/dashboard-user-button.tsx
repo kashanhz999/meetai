@@ -25,6 +25,10 @@ export const DashboardUserButton = () => {
         onSuccess: () => {
           router.push("/sign-in");
         },
+        onError:(error)=>{
+          console.error("Logout failed:", error);
+          alert("Failed to log out. Please try again.");
+        }
       },
     });
   };
