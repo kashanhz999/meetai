@@ -75,3 +75,20 @@
  -Protect Non-Auth Pages
 
  -Create, review & merge pull request
+
+ --------------------------------------------------------------
+
+ 06 Dashboard Sidebar
+
+  -Create Dashboard Layout
+
+  -Create Dashboard Module
+
+  -Create Dashboard Sidebar
+
+  -Modify 'globals.css' theme
+
+  -Fix gradient colors in auth views
+
+  -create, review & merge pull request
+  
