@@ -103,3 +103,11 @@
 
    -Create, review & merge pull request
   
+  ---------------------------------------------------------------------------
+
+  08 TRPC Setup
+
+   -Setup tRPC
+   -Experiment with client component
+   -Experiment with server component
+   -Preview prefetching
